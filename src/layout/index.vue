@@ -1,6 +1,12 @@
 <template>
   <el-container>
-    <el-header>Header</el-header>
+    <el-header>
+      <el-row>
+        <el-col :span="24">
+          <div class="grid-content ep-bg-purple-dark">Header</div>
+        </el-col>
+      </el-row>
+    </el-header>
     <el-main>
       Main
     </el-main>

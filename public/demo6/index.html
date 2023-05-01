@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>&lt;h1&gt;这是一个字符实体&nbsp;&nbsp;&amp;nbsp;</div>
+    <div>价格：&yen;199</div>
+    <div>价格：￥199</div>
+    <div>©版本所有</div>
+    <div>乘法: 5 * 10</div>
+    <div>乘法: 5 &times; 10</div>
+    <div>大于等于：5&ge;4</div>
+    <div>&符号：&amp;&amp;&amp;</div>
+    <div></div>
+    <iframe
+      src="https://www.taobao.com"
+      title="baidu"
+      width="600"
+      height="500"
+      frameborder="0"
+    ></iframe>
+    <p>文本对比</p>
+    <br />
+    <!-- 链接嵌入iframe -->
+    <a href="https://www.taobao.com" target="container">点我去淘宝</a>
+    <a href="https://www.yxt.com" target="container">点我去云学堂</a>
+    <form action="https://so.toutiao.com/search" target="container">
+      <input type="text" placeholder="输入" name="keyword" />
+      <input type="submit" value="搜索" />
+    </form>
+
+    <iframe name="container" frameborder="0" width="600" height="500" title="容器"></iframe>
+  </body>
+</html>

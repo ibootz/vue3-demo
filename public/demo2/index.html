@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.bootcdn.net/ajax/libs/normalize/8.0.1/normalize.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .block_div {
+        width: 500px;
+        height: 700px;
+        border: 1px solid grey;
+        background-color: #296;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        writing-mode: vertical-lr;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="#one">跳转到11111</a>
+    <a href="#three"><div>跳转到33333</div></a>
+    <div><a href="#twoo">跳转不到22222，因为锚点写错了</a></div>
+    <div></div><a href="#four">跳转到44444</a></div>
+
+    <div>
+      <!-- <a name="first"></a> -->
+      <div id="one" class="block_div">11111_通过a链接name属性可以跳</div>
+
+      <div id="three" class="block_div">33333_通过id也能跳</div>
+
+      <!-- <a name="two"></a> -->
+      <div id="two" class="block_div">22222_通过a链接name属性可以跳</div>
+
+      <div id="four" class="block_div">44444_通过id也能跳</div>
+
+      <div class="block_div">55555_通过id也能跳</div>
+      
+      <a href="#">回到顶部</a>
+    </div>
+    <script>
+      window.onload = function () {
+        // 点击 a 链接时执行滚动操作
+        const aElms = document.querySelectorAll('a[href^="#"]')
+        if (!aElms) {
+          return
+        }
+        aElms.forEach((aElm) => {
+          aElm.addEventListener('click', (e) => {
+            console.log('事件对象,注意不是点击的元素本身e：', e)
+            console.log('用于获取触发当前事件的元素，即事件最初发生时的目标元素e.target：', e.target)
+            console.log('用于获取当前正在处理事件的元素，即绑定了事件监听器的元素e.currentTarget：', e.currentTarget)
+            console.log('获取当前事件的类型e.type：', e.type)
+            console.log('闭包外部获取的a元素本身，等同于e.currentTarget：', aElm)
+            e.preventDefault() // 阻止默认行为
+            let targetId = aElm.getAttribute('href')
+            if (!targetId) {
+              console.log('xxxx');
+              return
+            }
+            targetId = targetId.slice(1)
+            let targetElm = document.getElementById(targetId)
+            if (!targetElm) {
+              console.log('yyyy');
+              return
+            }
+            let targetOffset = targetElm.offsetTop
+            console.log('targetOffset:', targetOffset);
+            window.scrollTo({
+              top: targetOffset, // 目标 div 的位置
+              behavior: 'smooth' // 平滑滚动
+            })
+          })
+        })
+      }
+    </script>
+  </body>
+</html>

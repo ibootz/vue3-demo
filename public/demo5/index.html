@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.bootcdn.net/ajax/libs/normalize/8.0.1/normalize.min.css"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+    <style>
+      select {
+        width: 220px;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="https://search.jd.com/Search" method="get" target="_blank">
+      <fieldset>
+        <legend>必填项</legend>
+        <label for="username">账户：</label
+        ><input
+          type="text"
+          id="username"
+          name="username"
+          value="zhangsan"
+          maxlength="15"
+          placeholder="账户"
+        />
+        <br />
+        <br />
+        <label for="password">密码：</label
+        ><input type="password" id="password" name="password" placeholder="密码" />
+        <br />
+        <br />
+        <!-- 单选框 -->
+        <span>性别：</span>
+        <label for="man"><input type="radio" id="man" name="sex" value="man" />男</label>
+        <label for="female"
+          ><input type="radio" id="female" name="sex" value="female" checked />女</label
+        >
+      </fieldset>
+      <br />
+      <br />
+      <fieldset>
+        <legend>额外信息</legend>
+        <!-- 复选框 -->
+        <span>爱好：</span>
+        <label for="smoke"
+          ><input type="checkbox" name="hobby" id="smoke" value="smoke" checked />抽烟</label
+        >
+        <label for="drink"
+          ><input type="checkbox" name="hobby" id="drink" value="drink" />喝酒</label
+        >
+        <label for="perm"
+          ><input type="checkbox" name="hobby" id="perm" value="perm" checked />烫头</label
+        >
+        <br />
+        <br />
+        <!-- 隐藏输入框 -->
+        <input type="hidden" name="hide" value="隐藏域" />
+        <!-- 文本框 -->
+        <label for="others">其他：</label
+        ><textarea name="others" id="others" cols="22" rows="5"></textarea>
+        <br />
+        <br />
+        <!-- [多选]下拉框 -->
+        <label
+          >籍贯：
+          <select name="jiguan" id="jiguan" size="5" multiple>
+            <option value=""></option>
+            <option value="hebei" selected>河北</option>
+            <option value="shandong">山东</option>
+            <option value="sichuan" selected>四川</option>
+            <option value="xizang">西藏</option>
+            <option value="qinghai">青海</option>
+            <option value="henan">河南</option>
+          </select>
+        </label>
+      </fieldset>
+      <br />
+      <br />
+      <input type="submit" value="确认" />
+      <input type="reset" value="重置" />
+      <input type="button" value="input模仿按钮" />
+      <!-- <button type="submit">确认</button> -->
+      <!-- <button type="reset">重置</button> -->
+    </form>
+  </body>
+</html>
