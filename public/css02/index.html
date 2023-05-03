@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.bootcdn.net/ajax/libs/normalize/8.0.1/normalize.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      ul > li {
+        color: orange;
+      }
+      .container ul a {
+        color: green;
+      }
+      /* 父子选择器 */
+      .code > #vue {
+        color: blue;
+        font-size: 30px;
+      }
+      /* 后代选择器 */
+      .code #java {
+        color: blue;
+        font-size: 30px;
+      }
+      ol li {
+        color: red;
+      }
+      /* 兄弟选择器, +代表紧紧相连的兄弟元素,只向下查找,不向上回溯 */
+      #js + .lan {
+        color: gray;
+      }
+      /* 兄弟选择器,~代表所有兄弟选择器,只向下查找,不向上回溯 */
+      #go ~ li {
+        color: aquamarine;
+      }
+      /* 属性选择器
+       ^= 以...开头
+       $= 以...结尾
+       *= 只要存在某部分字符既满足
+      */
+      [title*='va'] {
+        color: blueviolet;
+      }
+      /* 标签选择器与属性选择器 交集 */
+      div[title*='ja'] {
+        font-size: 30px;
+      }
+      /* 类选择器与属性选择器 交集 */
+      .js-clz[title^='j'] {
+        border: 1px solid red;
+      }
+      /* 伪类选择器 */
+      a:link {
+        color: blue;
+      }
+      a:visited {
+        color: gray;
+      }
+      a:hover {
+        color: aqua;
+      }
+      a:active {
+        color: pink;
+      }
+
+      .see-color:hover {
+        color: aqua;
+      }
+      .see-color:active {
+        color: pink;
+      }
+      .focus-cls:focus {
+        background-color: greenyellow;
+        color: red;
+      }
+      /* 伪类选择器中的结构选择器 */
+      div.jiegou > p:first-child {
+        color: royalblue;
+      }
+      div.jiegou > p:first-of-type {
+        color: red;
+      }
+      div.jiegou > p:last-child {
+        color: aqua;
+      }
+      div.jiegou > span:nth-last-child(4) {
+        color: green;
+      }
+      div.jiegou > p:nth-child(3) {
+        color: blueviolet;
+      }
+      div.child > p:nth-child(n) {
+        color: blue;
+      }
+      div.child > p:nth-child(2n) {
+        color: red;
+      }
+      div.child > p:nth-child(2n + 1) {
+        color: green;
+      }
+      /* 选择前2个, 公式必须符合 xn+y的格式,其中n从0开始计数 */
+      div.child > p:nth-child(-n + 2) {
+        color: palevioletred;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <ul>
+        <li>抽烟</li>
+        <li>喝酒</li>
+        <li>烫头</li>
+        <li>
+          <a href="">打游戏</a>
+        </li>
+      </ul>
+      <hr />
+      <ol>
+        <li>旅游</li>
+        <li>赛车</li>
+        <li class="code">
+          <div id="java">Java</div>
+          <div id="vue">Vue</div>
+          <div class="go">Go</div>
+        </li>
+      </ol>
+      <hr />
+      <ol class="subling">
+        <li class="lan">java</li>
+        <li class="lan" id="js">js</li>
+        <div>haha</div>
+        <li class="lan" id="go">go</li>
+        <li class="lan">python</li>
+        <li class="lan">html</li>
+      </ol>
+      <hr />
+      <div title="java">Java课程</div>
+      <div>Go课程</div>
+      <p title="js" class="js-clz">js课程</p>
+      <hr />
+      <a href="https://www.baidu.com">访问百度</a>
+      <span class="see-color">悬浮查看颜色</span>
+      <div>
+        <input type="text" class="focus-cls" placeholder="请输入" />
+      </div>
+      <hr />
+      <div class="jiegou">
+        <span>java</span>
+        <p>go</p>
+        <p>js</p>
+        <p>py</p>
+      </div>
+      <hr />
+      <div class="child">
+        <p>第1个</p>
+        <p>第2个</p>
+        <p>第3个</p>
+        <p>第4个</p>
+        <p>第5个</p>
+        <p>第6个</p>
+      </div>
+    </div>
+  </body>
+</html>

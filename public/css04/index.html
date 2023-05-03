@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.bootcdn.net/ajax/libs/normalize/8.0.1/normalize.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./index.css" />
+    <script></script>
+    <style>
+      body .priority {
+        color: blue;
+      }
+      .priority {
+        color: red;
+      }
+      .outter {
+        position: relative;
+        width: 400px;
+        height: 400px;
+        color: blue;
+        /* background-color: #f55353; */
+      }
+      .inner {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        margin: 150px;
+        color: skyblue;
+        background-color: #feb139;
+      }
+      .jicheng {
+        color: blue;
+      }
+      .jicheng p {
+        color: orangered;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="priority hah" id="hehe">css优先级</p>
+    <div class="outter">
+      outter
+      <div class="inner">inner</div>
+    </div>
+    <div class="jicheng">
+      <p>演示css属性的继承性</p>
+    </div>
+  </body>
+</html>

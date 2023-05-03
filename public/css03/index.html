@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.bootcdn.net/ajax/libs/normalize/8.0.1/normalize.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      /* html根元素 */
+      :root {
+        background-color: gray;
+      }
+      /* 伪类选择器-否定选择器 */
+      div > p:not(:nth-child(n + 4)) {
+        color: red;
+      }
+      /* 伪类选择器:ui选择器 */
+      input[type='radio']:checked {
+        width: 50px;
+        height: 50px;
+      }
+      input[type='checkbox']:checked {
+        width: 50px;
+        height: 50px;
+      }
+      input:disabled {
+        background-color: aquamarine;
+      }
+      /* 伪元素选择器 */
+      div.lit > p::first-letter {
+        color: yellow;
+      }
+      div.lit > p::first-line {
+        color: antiquewhite;
+      }
+      div.lit > p::selection {
+        background-color: green;
+        color: greenyellow;
+      }
+      .money > p::before {
+        content: '$';
+      }
+      .money > p::after {
+        content: '(免税)';
+      }
+      .ipt input::placeholder {
+        background-color: skyblue;
+        color: aqua;
+      }
+      .priority > p {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <p>java</p>
+      <p>js</p>
+      <p>go</p>
+      <p>py</p>
+      <p>rust</p>
+    </div>
+    <div>
+      <label for="username">
+        记住账号:
+        <input type="checkbox" name="username" id="username" />
+      </label>
+      <label for="password">
+        密码:
+        <input type="text" id="password" username="password" placeholder="密码" disabled />
+      </label>
+      性别:
+      <label><input type="radio" name="sex" id="man" />男</label>
+      <label><input type="radio" name="sex" id="female" />女</label>
+    </div>
+    <div class="lit">
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet suscipit debitis sed
+        libero deserunt aspernatur quisquam quidem voluptatum nam, id qui deleniti tenetur rerum
+        provident sapiente voluptate facilis, magnam aliquid?
+      </p>
+    </div>
+    <div class="ipt">
+      <input type="text" placeholder="测试变色" />
+    </div>
+    <div class="money">
+      <p>199.00</p>
+      <p>299.00</p>
+      <p>399.00</p>
+    </div>
+    <div class="priority">
+      <p>css优先级</p>
+    </div>
+  </body>
+</html>

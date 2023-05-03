@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 分组选择器,并集选择器 */
+      .susan,
+      .writer {
+        color: red;
+      }
+
+      /* 交集选择器 */
+      p.pig {
+        color: orange;
+      }
+
+      /* 并集选择器 */
+      .susan,
+      .pig,
+      .rich,
+      #htl,
+      .writer {
+        background-color: aqua;
+        width: 200px;
+        font-size: 30px;
+        border: 1px solid;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="susan">小羊苏西</p>
+    <p class="pig">小猪佩奇</p>
+    <h4 class="rich">土豪</h4>
+    <div class="writer">作家</div>
+    <h4 id="htl">灰太狼</h4>
+  </body>
+</html>
