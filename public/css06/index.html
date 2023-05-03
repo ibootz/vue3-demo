@@ -9,6 +9,106 @@
       href="https://cdn.bootcdn.net/ajax/libs/normalize/8.0.1/normalize.min.css"
       rel="stylesheet"
     />
+    <style>
+      .font-style1 {
+        font-style: normal;
+        /* 字体粗细 100~300:lighter 400~600:normal 600~:bold */
+        font-weight: 400;
+      }
+      .font-style2 {
+        font-style: italic;
+        font-weight: 100;
+      }
+      .font-style3 {
+        /* 最后两个属性必须是 => font-size font-family, 且先后顺序不能变 */
+        font: normal 800 32px STSong, STCaiyun, SimHei, KaiTi;
+      }
+
+      .letter1 {
+        letter-spacing: 20px;
+      }
+      .letter4 {
+        letter-spacing: -5px;
+      }
+      .letter2 {
+        word-spacing: 20px;
+      }
+      .letter3 {
+        word-spacing: -20px;
+      }
+      .letter5 {
+        text-decoration: line-through wavy red;
+      }
+      .letter6 > a {
+        /* 去除a链接的下划线 */
+        text-decoration: none;
+      }
+      .letter7 {
+        font-size: 40px;
+        text-indent: 80px;
+      }
+      .letter8 {
+        font-size: 40px;
+        text-align: right;
+      }
+      .letter9 {
+        height: 200px;
+        border: 1px solid red;
+        box-sizing: border-box;
+        font-size: 20px;
+        vertical-align: bottom;
+      }
+      .letter10 {
+        font-size: 100px;
+        border: 1px solid green;
+        box-sizing: border-box;
+      }
+      /* text-align, vertical-align ==> 用于控制在单行内左右上下移动元素 */
+      .letter10 span {
+        display: inline-block;
+        border: 1px solid green;
+        box-sizing: border-box;
+        font-size: 40px;
+        vertical-align: middle;
+      }
+      .letter11 {
+        font-size: 60px;
+        border: 1px solid green;
+        box-sizing: border-box;
+        /* 无法直接控制文件内容本身的移动，只能控制行内元素（非块级元素）的移动 */
+        vertical-align: top;
+        /* text-align属性可以控制文本移动 */
+        text-align: left;
+      }
+      .letter11 div {
+        display: inline;
+        font-size: 20px;
+        vertical-align: sub;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <div class="letter1">Lorem ipsum dolor 尚硅谷</div>
+    <div class="letter4">Lorem ipsum dolor 尚硅谷</div>
+    <div class="letter2">Lorem ipsum dolor 尚硅谷</div>
+    <div class="letter3">Lorem ipsum dolor 尚硅谷</div>
+    <hr />
+    <div class="letter5">Lorem ipsum dolor 尚硅谷</div>
+    <div class="letter6"><a href="#">Lorem ipsum dolor 尚硅谷</a></div>
+    <hr />
+    <div class="letter7">
+      我正在学习前端技术！！我正在学习前端技术！！我正在学习前端技术！！我正在学习前端技术！！我正在学习前端技术！！我正在学习前端技术！！我正在学习前端技术！！我正在学习前端技术！！
+    </div>
+    <hr />
+    <div class="letter8">尚硅谷</div>
+    <hr />
+    <div class="letter9">我正在学习前端技术</div>
+    <hr />
+    <div class="letter10">前端技术x<span>x尚硅谷</span></div>
+    <hr />
+    <div class="letter11">
+      前端技术x
+      <div>x尚硅谷</div>
+    </div>
+  </body>
 </html>
